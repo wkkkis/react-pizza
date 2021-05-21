@@ -3,9 +3,9 @@ import classNames from "classnames";
 import PropTypes from "prop-types"
 
 export default function PizzaBlock({imageUrl, name, types, sizes, price}) {
+    const availableTypes = ["тонкое", "традиционное"]
+    const availableSize = [26, 30, 40]
 
-    const availableTypes = ["тонкое", "традиционное"];
-    const availableSize = [26, 30, 40];
     const [activeType, setActiveType] = React.useState(types[0])
     const [activeSize, setActiveSize] = React.useState(sizes[0])
 
@@ -16,6 +16,8 @@ export default function PizzaBlock({imageUrl, name, types, sizes, price}) {
     let onSelectSize = (index) => {
         setActiveSize(index)
     }
+
+
 
     return (
         <div className="pizza-block">
@@ -76,5 +78,13 @@ PizzaBlock.propTypes = {
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     types: PropTypes.array.isRequired,
-    sizes: PropTypes.array.isRequired,
+    sizes: PropTypes.array.isRequired
 }
+
+PizzaBlock.defaultProps = {
+    name: "---",
+    price: 0,
+    types: [],
+    sizes: []
+}
+

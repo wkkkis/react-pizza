@@ -1,9 +1,12 @@
 const SET_SORT_BY = "filter/SET_SORT_BY"
-const SET_CATEGORY = "filter/SET_SORT_BY"
+const SET_CATEGORY = "filter/SET_CATEGORY"
 
 let initialState = {
-    category: 0,
-    sortBy: "popular"
+    category: null,
+    sortBy: {
+        type: 'rating',
+        order: 'desc'
+    }
 }
 
 export default function filters(state = initialState, action) {
@@ -21,7 +24,6 @@ export default function filters(state = initialState, action) {
         default:
             return state
     }
-
 }
 
 export const setSortBy = (payload) => ({type: SET_SORT_BY, payload})
