@@ -10,14 +10,14 @@ let initialState = {
 }
 
 export default function filters(state = initialState, action) {
-    switch (action.type){
+    switch (action.type) {
         case SET_SORT_BY:
-            return{
+            return {
                 ...state,
                 sortBy: action.payload
             }
         case SET_CATEGORY:
-            return{
+            return {
                 ...state,
                 category: action.index
             }

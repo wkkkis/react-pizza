@@ -32,6 +32,6 @@ const setLoading = (payload) => ({type: SET_LOADED, payload})
 
 export const getPizzas = (category, sortBy) => async dispatch => {
     dispatch(setLoading(false))
-    let response = await axios.get(`http://localhost:3001/pizzas?${category != null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${sortBy.order}`)
+    let response = await axios.get(`/pizzas?${category != null ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${sortBy.order}`)
     dispatch(setPizzas(response.data))
 }
