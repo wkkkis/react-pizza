@@ -10,9 +10,8 @@ function App() {
             <Header/>
             <div className="content">
                 <Switch>
-                    <Route exact path="/home" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route exact path="/cart" component={Cart}/>
-                    <Redirect from="/" to="/home"  />
                 </Switch>
             </div>
         </div>
